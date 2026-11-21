@@ -14,46 +14,63 @@
   p, li { color: var(--fg); }
   .muted { color: var(--muted); }
   a { color: var(--accent); }
+  code { font-size: 0.95em; }
 </style>
 </head>
 <body>
 <main>
   <h1>Política de Privacidade</h1>
-  <p class="muted">Finanças AI Lab · atualizada em 20 de novembro de 2026</p>
+  <p class="muted">Finanças AI Lab · atualizada em 21 de novembro de 2026</p>
 
-  <p>O Finanças AI Lab é um assistente financeiro pessoal, de uso privado de uma família, que funciona por mensagens no Telegram. Esta página explica quais dados ele usa e o que é feito com eles.</p>
+  <p>O Finanças AI Lab é um assistente financeiro pessoal, de uso privado de uma família, que funciona por mensagens no Telegram. Esta página explica quais dados ele usa, quem pode vê-los e o que você pode fazer com eles.</p>
 
   <h2>Quem pode usar</h2>
   <p>Só as pessoas autorizadas pela administradora do assistente. Quem não está autorizado não consegue registrar nem consultar nada.</p>
 
-  <h2>Quais dados são coletados</h2>
+  <h2>Quais dados são guardados</h2>
   <ul>
-    <li>O identificador da conversa no Telegram (chat_id), usado para separar os dados de cada pessoa.</li>
-    <li>As mensagens enviadas ao assistente e os lançamentos que vêm delas: data, descrição, valor, categoria, forma de pagamento e parcelas.</li>
-    <li>As metas de economia criadas e os valores guardados nelas.</li>
+    <li>O identificador da sua conversa no Telegram e o seu primeiro nome no Telegram.</li>
+    <li>Os lançamentos que você registra: data, descrição, valor, categoria, forma de pagamento e parcelas.</li>
+    <li>As metas de economia e os valores guardados nelas.</li>
+    <li>Um registro do que foi compartilhado: convites, aceites, recusas, saídas de carteiras conjuntas, exportações e pedidos para apagar dados.</li>
+  </ul>
+
+  <h2>Carteiras: o que é seu e o que é compartilhado</h2>
+  <ul>
+    <li>Cada pessoa tem uma <strong>carteira pessoal</strong>, que só ela vê pelo assistente.</li>
+    <li>Uma <strong>carteira conjunta</strong> (por exemplo, de um casal) só existe depois que todas as pessoas convidadas aceitam. Quem participa dela vê e registra os lançamentos e as metas dessa carteira, com o nome de quem registrou cada um. Participar de uma conjunta não abre a carteira pessoal de ninguém.</li>
+    <li>Qualquer participante pode sair a qualquer momento. Quando alguém sai, a carteira conjunta é arquivada para todos: ninguém registra mais nela pelo assistente e o histórico fica guardado.</li>
   </ul>
 
   <h2>Onde os dados ficam</h2>
-  <p>Os lançamentos e as metas ficam numa planilha do Google Sheets da administradora. O assistente acessa essa planilha pela API do Google, com autorização da própria administradora, e só lê e escreve nessa planilha.</p>
+  <p>Num banco de dados Postgres no Supabase, em servidores em São Paulo. O assistente (feito em n8n) acessa esse banco com um usuário próprio que não consegue passar por cima das regras de acesso: em cada mensagem, o banco só entrega as carteiras de quem está falando.</p>
 
   <h2>Como os dados são usados</h2>
   <ul>
     <li>Para registrar gastos e receitas, responder consultas, calcular indicadores do mês e acompanhar metas.</li>
-    <li>O texto das mensagens é enviado a um serviço de inteligência artificial (Groq) apenas para entender o pedido e escrever o diagnóstico do mês.</li>
+    <li>O texto das mensagens é enviado a um serviço de inteligência artificial (Groq) apenas para entender o pedido e escrever o diagnóstico do mês. As mensagens também passam pelo próprio Telegram.</li>
   </ul>
 
   <h2>O que não é feito</h2>
   <ul>
     <li>Os dados não são vendidos nem compartilhados com terceiros para publicidade ou qualquer outro fim.</li>
-    <li>Cada pessoa vê, pelo assistente, só os próprios dados.</li>
+    <li>A administradora não tem relatórios, painéis ou números sobre os dados de outras pessoas, nem agregados.</li>
   </ul>
-  <p class="muted">Com transparência: quem administra a planilha consegue ver todos os lançamentos guardados nela.</p>
+  <p class="muted">Com transparência: quem administra o banco de dados tecnicamente teria como acessá-lo. Por isso o acesso ao painel do banco é protegido, ninguém consulta dados de outras pessoas no uso normal e todo compartilhamento fica registrado.</p>
 
-  <h2>Seus direitos</h2>
-  <p>Você pode pedir a qualquer momento para ver, corrigir ou apagar os seus dados, falando com a administradora do assistente. O endereço de contato aparece na tela de autorização do Google.</p>
+  <h2>Cópias de segurança</h2>
+  <p>Não existe uma cópia central com os dados de todos. No dia 1 de cada mês, cada pessoa recebe no próprio Telegram um arquivo com os dados dela (os mesmos de "exportar meus dados"); esse arquivo é o backup dela, e ninguém mais recebe uma cópia. Também dá para pedir uma cópia a qualquer momento (veja abaixo).</p>
+
+  <h2>Seus direitos e como exercê-los pelo próprio assistente</h2>
+  <ul>
+    <li><code>quem vê meus dados</code>: mostra quem tem acesso a cada uma das suas carteiras.</li>
+    <li><code>exportar meus dados</code>: envia um arquivo com todos os seus lançamentos, metas e o histórico do que foi compartilhado.</li>
+    <li><code>apagar meus dados</code>: apaga para sempre a sua carteira pessoal e o seu cadastro, depois de pedir confirmação. Se você participa de uma carteira conjunta, ela é arquivada para todos e os seus lançamentos nela ficam sem autor.</li>
+    <li>Para corrigir um dado ou tirar qualquer dúvida, fale com a administradora do assistente. O endereço de contato aparece na tela de autorização do Google.</li>
+  </ul>
 
   <h2>Uso dos dados do Google</h2>
-  <p>O uso de informações recebidas das APIs do Google segue a <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de uso limitado.</p>
+  <p>Versões anteriores do assistente guardavam os lançamentos numa planilha do Google Sheets da administradora; hoje essa planilha não é mais usada pelo assistente. O uso de informações recebidas das APIs do Google segue a <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de uso limitado.</p>
 
   <p><a href="./">Voltar para a página inicial</a></p>
 </main>

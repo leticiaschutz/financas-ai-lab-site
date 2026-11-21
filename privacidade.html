@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade · Finanças AI Lab</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1f2328; --muted: #59636e; --accent: #1a7f37; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --fg: #e6edf3; --muted: #9198a1; --accent: #3fb950; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 1.8rem; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin: 32px 0 8px; }
+  p, li { color: var(--fg); }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Política de Privacidade</h1>
+  <p class="muted">Finanças AI Lab · atualizada em 20 de novembro de 2026</p>
+
+  <p>O Finanças AI Lab é um assistente financeiro pessoal, de uso privado de uma família, que funciona por mensagens no Telegram. Esta página explica quais dados ele usa e o que é feito com eles.</p>
+
+  <h2>Quem pode usar</h2>
+  <p>Só as pessoas autorizadas pela administradora do assistente. Quem não está autorizado não consegue registrar nem consultar nada.</p>
+
+  <h2>Quais dados são coletados</h2>
+  <ul>
+    <li>O identificador da conversa no Telegram (chat_id), usado para separar os dados de cada pessoa.</li>
+    <li>As mensagens enviadas ao assistente e os lançamentos que vêm delas: data, descrição, valor, categoria, forma de pagamento e parcelas.</li>
+    <li>As metas de economia criadas e os valores guardados nelas.</li>
+  </ul>
+
+  <h2>Onde os dados ficam</h2>
+  <p>Os lançamentos e as metas ficam numa planilha do Google Sheets da administradora. O assistente acessa essa planilha pela API do Google, com autorização da própria administradora, e só lê e escreve nessa planilha.</p>
+
+  <h2>Como os dados são usados</h2>
+  <ul>
+    <li>Para registrar gastos e receitas, responder consultas, calcular indicadores do mês e acompanhar metas.</li>
+    <li>O texto das mensagens é enviado a um serviço de inteligência artificial (Groq) apenas para entender o pedido e escrever o diagnóstico do mês.</li>
+  </ul>
+
+  <h2>O que não é feito</h2>
+  <ul>
+    <li>Os dados não são vendidos nem compartilhados com terceiros para publicidade ou qualquer outro fim.</li>
+    <li>Cada pessoa vê, pelo assistente, só os próprios dados.</li>
+  </ul>
+  <p class="muted">Com transparência: quem administra a planilha consegue ver todos os lançamentos guardados nela.</p>
+
+  <h2>Seus direitos</h2>
+  <p>Você pode pedir a qualquer momento para ver, corrigir ou apagar os seus dados, falando com a administradora do assistente. O endereço de contato aparece na tela de autorização do Google.</p>
+
+  <h2>Uso dos dados do Google</h2>
+  <p>O uso de informações recebidas das APIs do Google segue a <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de uso limitado.</p>
+
+  <p><a href="./">Voltar para a página inicial</a></p>
+</main>
+</body>
+</html>
